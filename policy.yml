@@ -1,0 +1,19 @@
+merge_request:
+    method: merge
+    squash: encourage
+
+project:
+    protected_branches:
+      - "master"
+    commit_template:
+      merge: |-
+        merge branch '%{source_branch}' into '%{target_branch}'
+
+        %{title}
+
+        %{issues}
+
+        See merge request %{reference}
+
+      squash: "squash commit: %{title}"
+      suggestion: "My custom Apply %{suggestions_count} suggestion(s) to %{files_count}"

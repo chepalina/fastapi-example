@@ -1,0 +1,12 @@
+version: '2.4'
+
+services:
+  tests:
+    build:
+      context: .
+      target: tests
+      args:
+        ENVIRONMENT: development
+
+    command: >
+      /bin/bash run_tests_linters.sh
